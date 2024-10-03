@@ -43,6 +43,10 @@ app.post('/auth', async(req, res) =>{
     }
 })
 
+app.get('/', async (req, res) => {
+    res.send("Hello world!")
+})
+
 app.post('/add', async(req, res) => {
     const {login, passwd} = req.body
     const user = await User.create({login, passwd})
